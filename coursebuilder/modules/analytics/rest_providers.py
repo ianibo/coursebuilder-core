@@ -140,7 +140,7 @@ class LessonsDataSource(data_sources.AbstractSmallRestDataSource):
             'Lessons',
             description='Sets of lessons providing course content')
         reg.add_property(schema_fields.SchemaField(
-            'lesson_id', 'Unit ID', 'string',
+            'lesson_id', 'Lesson ID', 'string',
             description='Key uniquely identifying which lesson this is'))
         reg.add_property(schema_fields.SchemaField(
             'unit_id', 'Unit ID', 'string',
@@ -167,7 +167,7 @@ class LessonsDataSource(data_sources.AbstractSmallRestDataSource):
         ret = []
         for lesson in lessons:
             ret.append({
-                'lesson_id': str(lesson.unit_id),
+                'lesson_id': str(lesson.lesson_id),
                 'unit_id': str(lesson.unit_id),
                 'title': lesson.title,
                 'scored': lesson.scored,
